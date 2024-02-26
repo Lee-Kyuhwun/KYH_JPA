@@ -150,6 +150,3 @@ querydsl/querydsl/gradle/**
 
 **/.idea/*
 .idea/**
-**/**/gradlew.bat
-**/**/settings.gradle
-**/**/gradlew

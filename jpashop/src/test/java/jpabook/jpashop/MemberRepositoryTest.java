@@ -24,7 +24,7 @@ class MemberRepositoryTest {
     public void testMember() throws Exception{
         //given
         Member member = new Member();
-        member.setUsername("memberA");
+        member.setUserName("memberA");
 
         //when
         Long saveId = memberRepository.save(member);
@@ -32,7 +32,7 @@ class MemberRepositoryTest {
 
         //then
         assertEquals(findMember.getId(), member.getId());
-        assertEquals(findMember.getUsername(), member.getUsername());
+        assertEquals(findMember.getUserName(), member.getUserName());
         assertEquals(findMember, member);
     }
 }

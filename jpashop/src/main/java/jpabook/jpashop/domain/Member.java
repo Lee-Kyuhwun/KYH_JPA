@@ -1,7 +1,6 @@
 package jpabook.jpashop.domain;
 
 
-import jpabook.jpashop.domain.Order;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,7 +15,7 @@ public class Member {
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
-    private String name;
+    private String userName;
     @Embedded
     private Address address;
     @OneToMany(mappedBy = "member")

@@ -3,8 +3,12 @@ package jpabook.jpashop.domain.item;
 
 import jakarta.persistence.*;
 import jdk.jfr.Enabled;
+import jpabook.jpashop.domain.Category;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE) // 단일 테이블 전략
@@ -28,7 +32,7 @@ public abstract class Item { // 추상 클래스이란 미완성 설계도이며
 
     private int stockQuantity; // 재고 수량
 
-
-
+    @ManyToMany
+    private List<Category> categoryies = new ArrayList<>();
 
 }

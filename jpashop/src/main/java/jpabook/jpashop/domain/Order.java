@@ -26,7 +26,7 @@ public class Order {
     private Member member; //주문 회원
 
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL) // CascadeType.ALL: OrderItem에 대한 모든 변경을 전파
     private List<OrderItem> orderItems = new ArrayList<>();
 
 
@@ -40,5 +40,24 @@ public class Order {
 
     @Enumerated(EnumType.STRING)
     private OrderStatus status; //주문상태 [ORDER, CANCEL]
+
+
+    //==연관관계 메서드 == //
+    public void setMember(Member member){
+        this.member = member;
+        member.getOrders().add(this); // 양방향 연관관계 설정
+    }
+
+
+    public void addOrderItem(OrderItem orderItem){
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
+
+    public void setDelivery(Delivery delivery){
+        this.delivery = delivery;
+        delivery.setOrder(this);
+    }
+
 
 }

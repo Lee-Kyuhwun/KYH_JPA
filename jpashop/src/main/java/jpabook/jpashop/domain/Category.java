@@ -33,7 +33,7 @@ public class Category {
      * 이 코드는 `Item`의 하위 클래스의 인스턴스를 `items` 리스트에 저장하려는 의도로 보입니다.
      * */
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "parent_id")
     private Category parent;
 

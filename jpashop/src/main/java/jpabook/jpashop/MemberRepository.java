@@ -1,3 +1,4 @@
+/*
 package jpabook.jpashop;
 
 
@@ -25,3 +26,4 @@ public class MemberRepository {
         return em.find(Member.class, id);
     }
 }
+*/

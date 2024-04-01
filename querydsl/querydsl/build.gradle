@@ -36,7 +36,6 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
 
-	implementation 'mysql:mysql-connector-java:8.0.28' // 사용 중인 MySQL 버전에 맞는 커넥터 버전을 사용하세요
 
 	//Querydsl 추가
 	// Querydsl 추가

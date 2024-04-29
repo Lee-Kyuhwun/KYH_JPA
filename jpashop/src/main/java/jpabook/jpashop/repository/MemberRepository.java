@@ -4,15 +4,17 @@ package jpabook.jpashop.repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jpabook.jpashop.domain.Member;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@RequiredArgsConstructor
 public class MemberRepository {
 
-    @PersistenceContext // 엔티티 매니저를 주입받을 수 있음
-    private EntityManager em;
+    // @PersistenceContext // 엔티티 매니저를 주입받을 수 있음
+    private final EntityManager em;
 
     public void save(Member member){
         em.persist(member); // 영속성 컨텍스트에 저장

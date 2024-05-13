@@ -1,5 +1,6 @@
 package jpabook.jpashop.service;
 
+import com.fasterxml.jackson.annotation.JsonRootName;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import jpabook.jpashop.domain.Member;
@@ -36,7 +37,7 @@ class MemberServiceTest {
         // when
         Long savedId = memberService.join(member);
 
-        // then
+        // then\
         assertEquals(member,memberRepository.findOne(savedId));
     }
 

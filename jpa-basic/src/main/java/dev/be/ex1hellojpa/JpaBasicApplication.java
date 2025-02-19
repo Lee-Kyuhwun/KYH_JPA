@@ -28,7 +28,10 @@ public class JpaBasicApplication {
         }finally {
             entityManager.close();
         }
-
+        // JPQL 엔티티 객체를 대상으로 검색한다.
+        // SQL은 데이터 베이스 테이블을 대상으로 쿼리
+        // JPQL은 엔티티 객체를 대상으로 쿼리
+        // JPQL은 SQL을 추상화한 객체 지향 쿼리 언어
 		Member member = new Member();
 		member.setId(1L);
 		member.setName("HelloA");

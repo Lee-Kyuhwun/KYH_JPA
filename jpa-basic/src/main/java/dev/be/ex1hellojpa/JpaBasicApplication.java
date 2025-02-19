@@ -15,7 +15,7 @@ public class JpaBasicApplication {
 		tx.begin();
         try{
             Member findMember = entityManager.find(Member.class, 1L);
-
+            Class<Member> memberClass = Member.class;
             entityManager.createQuery("select m from Member as m", Member.class)
                     .setFirstResult(1)
                     .setMaxResults(10)

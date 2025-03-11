@@ -14,6 +14,16 @@ public class JpaBasicApplication {
 		EntityTransaction tx = entityManager.getTransaction();
 		tx.begin();
         try{
+
+            // 비영속 상태
+            Member member = new Member();
+            member.setId(101L);
+            member.setName("HelloJPA");
+            // 영속 상태
+            System.out.println("member = " + member);
+            entityManager.persist(member);
+            System.out.println("after member = " + member);
+
             Member findMember = entityManager.find(Member.class, 1L);
             Class<Member> memberClass = Member.class;
             entityManager.createQuery("select m from Member as m", Member.class)

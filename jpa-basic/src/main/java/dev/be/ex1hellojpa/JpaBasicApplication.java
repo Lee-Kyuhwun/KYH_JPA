@@ -15,10 +15,14 @@ public class JpaBasicApplication {
 		tx.begin();
         try{
 
+
             // 비영속 상태
             Member member = new Member();
             member.setId(101L);
             member.setName("HelloJPA");
+            // 준영속 처리
+            entityManager.detach(member);
+
             // 영속 상태
             System.out.println("member = " + member);
             entityManager.persist(member);

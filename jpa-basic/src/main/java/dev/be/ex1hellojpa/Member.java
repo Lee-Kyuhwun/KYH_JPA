@@ -3,9 +3,10 @@ package dev.be.ex1hellojpa;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-
+@Table
 public class Member {
     @Id
     private Long id;

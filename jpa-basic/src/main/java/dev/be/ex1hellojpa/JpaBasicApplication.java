@@ -18,8 +18,7 @@ public class JpaBasicApplication {
 
             // 비영속 상태
             Member member = new Member();
-            member.setId(101L);
-            member.setName("HelloJPA");
+
             // 준영속 처리
             entityManager.detach(member);
 
@@ -35,7 +34,6 @@ public class JpaBasicApplication {
                     .setMaxResults(10)
                     .getResultList()
                     .forEach(System.out::println);
-            findMember.setName("HelloJPA");
             tx.commit();
         }catch (Exception e){
             tx.rollback();
@@ -47,8 +45,7 @@ public class JpaBasicApplication {
         // JPQL은 엔티티 객체를 대상으로 쿼리
         // JPQL은 SQL을 추상화한 객체 지향 쿼리 언어
 		Member member = new Member();
-		member.setId(1L);
-		member.setName("HelloA");
+
 		entityManager.persist(member);
 		tx.commit();
 

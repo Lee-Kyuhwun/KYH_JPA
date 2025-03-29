@@ -16,16 +16,8 @@ public class JpaBasicApplication {
         try{
 
 
-            // 비영속 상태
             Member member = new Member();
-
-            // 준영속 처리
-            entityManager.detach(member);
-
-            // 영속 상태
-            System.out.println("member = " + member);
-            entityManager.persist(member);
-            System.out.println("after member = " + member);
+            member.setRoleType(RoleType.USER);
 
             Member findMember = entityManager.find(Member.class, 1L);
             Class<Member> memberClass = Member.class;

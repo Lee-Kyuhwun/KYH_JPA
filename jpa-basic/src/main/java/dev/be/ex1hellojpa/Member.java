@@ -8,8 +8,10 @@ import java.util.Date;
 
 @Entity
 @Table(name = "Mbr")
+@SequenceGenerator(name = "member_seq")
 public class Member {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     //유니크키는 table에서 유니크키로 설정해줘야함 그리고 보통 @table 애너테이션에 유니크 키를 설정한다
     // column에너테이션에서 유니크설정을 해주면 유니크키 이름이 알아보기 힘들어짐

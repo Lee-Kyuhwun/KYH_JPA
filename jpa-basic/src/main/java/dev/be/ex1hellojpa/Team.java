@@ -7,6 +7,7 @@ import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,6 +20,10 @@ public class Team {
 
     private String name;
 
-    @OneToMany
-    private List<Member> members;
+    @OneToMany(mappedBy = "team") // mappedBy: team이 연관관계의 주인이라는 것을 나타냄
+    private List<Member> members = new ArrayList<>();
+
+
+
+
 }

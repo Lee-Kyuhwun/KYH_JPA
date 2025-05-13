@@ -3,8 +3,11 @@ package dev.be.ex1hellojpa;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,5 +19,6 @@ public class Team {
 
     private String name;
 
-
+    @OneToMany
+    private List<Member> members;
 }

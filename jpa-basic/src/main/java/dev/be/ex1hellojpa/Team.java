@@ -22,6 +22,7 @@ public class Team {
 
     @OneToMany(mappedBy = "team") // mappedBy: team이 연관관계의 주인이라는 것을 나타냄
     private List<Member> members = new ArrayList<>();
+    // 외래키가 있는 곳을 주인으로 정하라
 
 
 

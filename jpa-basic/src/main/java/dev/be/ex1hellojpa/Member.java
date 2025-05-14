@@ -26,6 +26,11 @@ public class Member {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id", referencedColumnName = "id")
     private Team team;
+    // 외래 키가 있는 곳을 주인으로 정하라
+    // 여기서는 Member가 team_id를 가지고 있으므로 Member가 주인이다
+    // 1:N 관계에서 N쪽이 주인이다
+
+
 
     //
 //    private BigDecimal age;

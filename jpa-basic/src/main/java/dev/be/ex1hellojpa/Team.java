@@ -24,6 +24,10 @@ public class Team {
     private List<Member> members = new ArrayList<>();
     // 외래키가 있는 곳을 주인으로 정하라
 
+    public void addMember(Member member) {
+        member.setTeam(this);
+        members.add(member);
+    }
 
 
 

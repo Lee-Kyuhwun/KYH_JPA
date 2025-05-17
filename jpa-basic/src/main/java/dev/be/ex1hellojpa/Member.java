@@ -5,9 +5,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 @Entity
 @Table(name = "Mbr")
 @SequenceGenerator(name = "member_seq")
@@ -30,6 +27,13 @@ public class Member {
     // 여기서는 Member가 team_id를 가지고 있으므로 Member가 주인이다
     // 1:N 관계에서 N쪽이 주인이다
 
+
+    public void changeTeam(Team team) {
+        this.team = team;
+        if (team != null) {
+            team.getMembers().add(this);
+        }
+    }
 
 
     //

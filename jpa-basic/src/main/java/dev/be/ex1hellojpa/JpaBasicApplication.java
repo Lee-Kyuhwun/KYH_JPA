@@ -5,6 +5,8 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
+import java.util.List;
+
 public class JpaBasicApplication {
 
 
@@ -21,13 +23,17 @@ public class JpaBasicApplication {
 
             Member member = new Member();
             member.setName("Member 1");
-            member.setTeam(team);
+            member.changeTeam(team);
             em.persist(member);
 
             Member findMember = em.find(Member.class, member.getId());
 
             Team findTeam = findMember.getTeam();
+            List<Member> members = findTeam.getMembers();
 
+            for (Member m : members) {
+                System.out.println("Member name: " + m.getName());
+            }
 
 
 

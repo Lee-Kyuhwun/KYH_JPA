@@ -12,15 +12,15 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class JpashopbasicApplication {
 
-    private CommandLineRunner 애플리케이션_시작됨;
-
     public static void main(String[] args) {
         SpringApplication.run(JpashopbasicApplication.class, args);
     }
 
     @Bean
     public CommandLineRunner run() {
-        return 애플리케이션_시작됨;
+        return args -> {
+            System.out.println("애플리케이션 시작됨");
+        };
     }
 
     @Bean

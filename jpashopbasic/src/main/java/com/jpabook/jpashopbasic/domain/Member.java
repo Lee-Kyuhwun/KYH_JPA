@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -14,6 +17,9 @@ public class Member {
     @Column(name = "MEMBER_ID")
     private Long id;
 
+
+
+
     private String name;
 
     private String city;
@@ -21,5 +27,9 @@ public class Member {
     private String street;
 
     private String zipcode;
+
+    @OneToMany(mappedBy = "Mmember")
+    private List<Order> orders = new ArrayList<>();
+
 
 }

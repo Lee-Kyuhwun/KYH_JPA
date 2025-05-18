@@ -28,8 +28,24 @@ public class Member {
 
     private String zipcode;
 
-    @OneToMany(mappedBy = "Mmember")
+    @OneToMany(mappedBy = "Member")
     private List<Order> orders = new ArrayList<>();
+
+
+    @OneToOne
+    @JoinColumn(name = "LOCKER_ID")
+    private Locker locker;
+
+    // 실무에서는 이렇게 사용 X
+//    @ManyToMany
+//    @JoinTable(name = "MEMBER_PRODUCT")
+//    private List<Product> products = new ArrayList<>();
+
+
+    @OneToMany
+    private List<MemberProduct> memberProducts = new ArrayList<>();
+
+
 
 
 }

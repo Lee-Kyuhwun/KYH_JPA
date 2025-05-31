@@ -1,5 +1,12 @@
 package com.jpabook.jpashopbasic.domain.mapping;
 
+
+import jakarta.persistence.DiscriminatorValue;
+
+@DiscriminatorValue("B")
+
+
+
 public class Book extends Item{
 
     private String author;
